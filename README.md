@@ -1,7 +1,16 @@
-## Start code for the backend part of the Cars 'R' Us ongoing exercise
-[![Java CI with Maven](https://github.com/kea-plaul/cars-r-us-startcode/actions/workflows/maven.yml/badge.svg)](https://github.com/kea-plaul/cars-r-us-startcode/actions/workflows/maven.yml)
+Cars r rus startcode with queries and pageable
+[![Java CI with Maven](https://github.com/MichaelDyvad/cars-startcode-queries/actions/workflows/maven.yml/badge.svg)](https://github.com/MichaelDyvad/cars-startcode-queries/actions/workflows/maven.yml)
 
-Extend the BaseUser.java class when you create your Member entity. 
+How to setup a matching CI/CD pipeline
+For at lave en CI/CD pipeline baseret på github action skal der oprettes et github repository
+Github repoet skal connectes med azure web service, så github action bliver brugt som en byggeserver
 
-Then the Json Web Token based security, should work with whatever you design, with the code you will be give later.
+
+For at kunne sætte denne spring boot app op, som en app service skal der laves:
+1. ssh nøgle
+2. Connect ssh nøglen til ens azure web service
+3. installere docker på web servicen
+4. installere ubuntu
+5. installere mysql, så der kan sættes en database op
+
 
