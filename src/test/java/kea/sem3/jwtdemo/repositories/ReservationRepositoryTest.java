@@ -63,4 +63,13 @@ class ReservationRepositoryTest {
   public void aTest(){
     assertTrue(true);
   }
+
+  @Test
+  public void testFindReservedCarBtIdAndDate(){
+    Reservation res = reservationRepository.findReservationByReservedCar_IdAndRentalDate(carRav4.getId(), reservationDate);
+    assertNotNull(res);
+  }
+
+
+
 }

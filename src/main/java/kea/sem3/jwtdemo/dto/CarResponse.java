@@ -41,7 +41,6 @@ public class CarResponse {
     }
 
     public static List<CarResponse> getCarsFromEntities(List<Car> cars){
-        //We will do this together
         return cars.stream().map(car-> new CarResponse(car,false)).collect(Collectors.toList());
 
     }

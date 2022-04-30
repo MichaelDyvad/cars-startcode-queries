@@ -4,10 +4,12 @@ import kea.sem3.jwtdemo.dto.CarRequest;
 import kea.sem3.jwtdemo.dto.CarResponse;
 import kea.sem3.jwtdemo.entity.Car;
 import kea.sem3.jwtdemo.service.CarService;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("api/cars")
 public class CarController {
@@ -17,9 +19,15 @@ public class CarController {
         this.carService = carService;
     }
 
-    @GetMapping
+    //@GetMapping
     public List<CarResponse> getCars(){
         return carService.getCars();
+    }
+
+    //måde at bruge variabler i url med pageable: ?page=1&size=4&sort=pricePrDay
+    @GetMapping("")
+    public List<CarResponse> getCars(Pageable pageable){
+        return carService.getCars(pageable);
     }
 
     @GetMapping("/{id}")

@@ -30,16 +30,13 @@ public class MemberResponse {
     String zip;
     List<String> roleNames;
 
-    //Only meant for admins
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     LocalDateTime created;
     @UpdateTimestamp
     LocalDateTime edited;
-    Boolean isApproved; //Make sure you understand why we use Boolean and not boolean
-    //Number between 0 and 10, ranking the customer
-    Byte ranking; //Make sure you understand why we use Byte and not byte
+    Boolean isApproved;
+    Byte ranking;
 
-    //Meant to be used as response when new users are created
     public MemberResponse(String username, LocalDateTime created, List<Role> roleList){
         this.created = created;
         this.roleNames = roleList.stream().map(role->role.toString()).collect(Collectors.toList());
